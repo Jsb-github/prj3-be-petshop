@@ -26,6 +26,8 @@ public class Order {
 
     private Integer detailNo;
 
+    private Integer reviewStatus;
+
     private Integer totalPrice;
 
     private  String url;

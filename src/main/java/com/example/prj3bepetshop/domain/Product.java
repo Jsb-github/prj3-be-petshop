@@ -17,6 +17,8 @@ public class Product {
 
     private  Integer  quantity;
 
+    private Integer reviewStatus;
+
     private  String fileName;
 
     private  String url;

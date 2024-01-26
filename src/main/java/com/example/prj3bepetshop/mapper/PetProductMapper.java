@@ -26,7 +26,7 @@ public interface PetProductMapper {
     @Select("""
                SELECT
                pd.no, category, title, pd.price, fileName,
-               og.no, consumer, quantity,og.total
+               og.no, consumer, quantity,og.total,og.reviewStatus
                FROM petproducts pd
                LEFT JOIN ordergoods og
                ON pd.no = og.productNo
