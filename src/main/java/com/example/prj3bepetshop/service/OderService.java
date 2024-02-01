@@ -56,11 +56,13 @@ public class OderService {
 
         for(Order order : orderList){
                List<Product>  products = petProductMapper.selectById(order.getNo());
+
                for (Product product :products){
                    String url = urlPrefix + "prj3/petProduct/"+ product.getCategory() +"/"+ product.getFileName();
                    order.setProducts(products);
                    product.setUrl(url);
                    order.setCategory(product.getCategory());
+
                }
             }
 

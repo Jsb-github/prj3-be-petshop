@@ -15,6 +15,8 @@ public class Product {
 
     private  Integer total;
 
+    private  Integer orderNo;
+
     private  Integer  quantity;
 
     private Integer reviewStatus;

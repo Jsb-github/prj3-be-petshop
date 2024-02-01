@@ -24,13 +24,13 @@ public interface PetProductMapper {
     List<Product> selectByCategory(String category);
 
     @Select("""
-               SELECT
-               pd.no, category, title, pd.price, fileName,
-               og.no, consumer, quantity,og.total,og.reviewStatus
-               FROM petproducts pd
-               LEFT JOIN ordergoods og
-               ON pd.no = og.productNo
-               WHERE og.detailNo = #{no};
+              SELECT
+              pd.no ,category, title, pd.price, fileName,
+              og.no AS orderNo, consumer, quantity,og.total,og.reviewStatus
+              FROM petproducts pd
+              LEFT JOIN ordergoods og
+              ON pd.no = og.productNo
+              WHERE og.detailNo  = #{no};
             """)
    List<Product>  selectById(Integer no);
 

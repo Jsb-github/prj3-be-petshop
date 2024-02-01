@@ -37,4 +37,20 @@ public interface OrderMapper {
                 WHERE consumer = #{email}
             """)
     List<Order> selectByDetail(String email);
+
+    @Select("""
+              SELECT *
+               FROM ordergoods             
+               WHERE no = #{no};
+                
+            """)
+  Order selecbyNo(Integer no);
+
+
+    @Select("""
+                UPDATE ordergoods 
+                SET reviewStatus = 1
+                WHERE no =#{no}
+            """)
+    void updateStatus(Integer no);
 }
